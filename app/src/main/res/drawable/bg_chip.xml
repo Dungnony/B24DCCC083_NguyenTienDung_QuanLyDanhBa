@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chip nhỏ hiển thị nhóm liên hệ -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/teal_light" />
+    <corners android:radius="@dimen/chip_corner_radius" />
+</shape>

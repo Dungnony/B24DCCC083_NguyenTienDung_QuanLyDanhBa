@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/screen_padding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <!-- Họ và tên -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_name"
+                    android:textAppearance="@style/TextAppearance.QuanLyDanhBa.Label" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    style="@style/Widget.QuanLyDanhBa.EditText"
+                    android:layout_marginTop="@dimen/label_spacing"
+                    android:hint="@string/hint_name"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName|textCapWords"
+                    android:maxLines="1" />
+
+                <!-- Số điện thoại -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/field_spacing"
+                    android:text="@string/label_phone"
+                    android:textAppearance="@style/TextAppearance.QuanLyDanhBa.Label" />
+
+                <EditText
+                    android:id="@+id/edtPhone"
+                    style="@style/Widget.QuanLyDanhBa.EditText"
+                    android:layout_marginTop="@dimen/label_spacing"
+                    android:hint="@string/hint_phone"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:maxLines="1" />
+
+                <!-- Nhóm -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/field_spacing"
+                    android:text="@string/label_group"
+                    android:textAppearance="@style/TextAppearance.QuanLyDanhBa.Label" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_spacing"
+                    android:background="@drawable/bg_input"
+                    android:minHeight="@dimen/input_height">
+
+                    <Spinner
+                        android:id="@+id/spinnerGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:entries="@array/contact_groups"
+                        android:spinnerMode="dropdown" />
+                </FrameLayout>
+
+                <!-- Giới tính, mặc định chọn Nam -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/field_spacing"
+                    android:text="@string/label_gender"
+                    android:textAppearance="@style/TextAppearance.QuanLyDanhBa.Label" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_spacing"
+                    android:checkedButton="@+id/radioMale"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/gender_male" />
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/gender_female" />
+
+                    <RadioButton
+                        android:id="@+id/radioOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gender_other" />
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/cbAddFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/checkbox_add_favorite" />
+
+                <!-- Ghi chú, không bắt buộc -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/field_spacing"
+                    android:text="@string/label_note"
+                    android:textAppearance="@style/TextAppearance.QuanLyDanhBa.Label" />
+
+                <EditText
+                    android:id="@+id/edtNote"
+                    style="@style/Widget.QuanLyDanhBa.EditText"
+                    android:layout_marginTop="@dimen/label_spacing"
+                    android:gravity="top|start"
+                    android:hint="@string/hint_note"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="3"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btnSaveContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_save_contact" />
+    </LinearLayout>
+</ScrollView>

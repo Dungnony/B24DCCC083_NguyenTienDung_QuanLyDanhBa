@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dữ liệu cho Spinner chọn nhóm -->
+    <string-array name="contact_groups">
+        <item>@string/group_family</item>
+        <item>@string/group_friends</item>
+        <item>@string/group_work</item>
+        <item>@string/group_other</item>
+    </string-array>
+</resources>
